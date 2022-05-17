@@ -84,7 +84,7 @@ class Blob {
     this._color = value;
   }
   get color() {
-    return this._color || '#FFFFFF';
+    return this._color || '#DA4167';
   }
 
   set canvas(value) {
@@ -103,7 +103,7 @@ class Blob {
     }
   }
   get numPoints() {
-    return this._points || 32;
+    return this._points || 32 * Math.round(this.canvas.width / 1000);
   }
 
   set radius(value) {
@@ -112,7 +112,7 @@ class Blob {
     }
   }
   get radius() {
-    return this._radius || 150;
+    return this._radius || this.canvas.width / 4;
   }
 
   set position(value) {
